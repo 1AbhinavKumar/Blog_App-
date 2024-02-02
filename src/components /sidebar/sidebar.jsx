@@ -44,7 +44,7 @@ function sidebar() {
           About Me
         </span>
 
-        <img src={user} alt="user image" className=" mt-1" />
+        <img src={user} alt="" className=" mt-1" />
 
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, et.

@@ -34,7 +34,7 @@ function TopBar() {
   ];
 
   return (
-    <div className="w-full h-50 bg-white sticky top-0 flex items-center">
+    <div className="w-full h-50 bg-white sticky top-0 flex items-center z-20">
       {/* --------------- right section -------------------- */}
 
       <div className="flex-3 flex items-center justify-center ">
