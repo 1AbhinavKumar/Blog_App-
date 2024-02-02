@@ -74,19 +74,19 @@ function sidebar() {
         <div>
           <FontAwesomeIcon
             icon={faFacebookSquare}
-            className=" ml-2 mr-3 text-2xl text-gray-700 hover:scale-110 duration-200  cursor-pointer"
+            className=" ml-2 mr-3 text-2xl text-gray-700 hover:scale-110 hover:text-blue-500 duration-200  cursor-pointer"
           />
           <FontAwesomeIcon
             icon={faSquareXTwitter}
-            className="mr-3 text-2xl text-gray-700 hover:scale-110 duration-200  cursor-pointer"
+            className="mr-3 text-2xl text-gray-700 hover:scale-110 duration-200  cursor-pointer  hover:text-black"
           />
           <FontAwesomeIcon
             icon={faSquarePinterest}
-            className=" mr-3 text-2xl text-gray-700 hover:scale-110 duration-200  cursor-pointer"
+            className=" mr-3 text-2xl text-gray-700 hover:scale-110 duration-200  cursor-pointer  hover:text-red-400"
           />
           <FontAwesomeIcon
             icon={faSquareInstagram}
-            className=" mr-2 text-2xl text-gray-700 hover:scale-110 duration-200  cursor-pointer"
+            className=" mr-2 text-2xl text-gray-700 hover:scale-110 duration-200  cursor-pointer  hover:text-red-600"
           />
         </div>
       </div>

@@ -40,19 +40,19 @@ function TopBar() {
       <div className="flex-3 flex items-center justify-center ">
         <FontAwesomeIcon
           icon={faFacebookSquare}
-          className=" ml-2 mr-5 text-2xl text-gray-500 "
+          className=" ml-2 mr-5 text-2xl text-gray-500 cursor-pointer hover:text-blue-500"
         />
         <FontAwesomeIcon
           icon={faSquareXTwitter}
-          className="mr-5 text-2xl text-gray-500 "
+          className="mr-5 text-2xl text-gray-500 cursor-pointer hover:text-black"
         />
         <FontAwesomeIcon
           icon={faSquarePinterest}
-          className=" mr-5 text-2xl text-gray-500 "
+          className=" mr-5 text-2xl text-gray-500 cursor-pointer hover:text-red-400"
         />
         <FontAwesomeIcon
           icon={faSquareInstagram}
-          className=" mr-8 text-2xl text-gray-500 "
+          className=" mr-8 text-2xl text-gray-500 cursor-pointer hover:text-red-600 "
         />
       </div>
 
