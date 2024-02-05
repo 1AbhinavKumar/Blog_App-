@@ -16,7 +16,7 @@ function Settings() {
           </span>
         </div>
 
-    {/* --------------- form part ---------------------- */}
+        {/* --------------- form part ---------------------- */}
         <form className=" flex flex-col">
           <label className=" text-lg mt-5"> Profile Picture</label>
 
@@ -31,7 +31,7 @@ function Settings() {
                 icon={faCircleUser}
                 className=" w-6 h-6 p-1 flex justify-center items-center border-none rounded-full ml-2 text-white bg-teal-400 cursor-pointer"
               />
-            </label> 
+            </label>
             <input
               id="fileInput"
               type="file"
@@ -39,20 +39,38 @@ function Settings() {
               className=" w-1/3 "
             />
           </div>
-          
-        {/* --------text area and labels -------------- */}
+
+          {/* --------text area and labels -------------- */}
           <label className=" text-lg mt-5"> Username</label>
-          <input type="text" name="name" placeholder="Username" className=" text-gray-700 mt-3 mb-3 h-7 border-gray-500 border-b focus:outline-none" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Username"
+            className=" text-gray-700 mt-3 mb-3 h-7 border-gray-500 border-b focus:outline-none"
+          />
 
           <label className=" text-lg mt-5">Email</label>
-          <input type="email" placeholder="abhi@gmail.com" name="email"  className=" text-gray-700 mt-3 mb-3 h-7 border-gray-500 border-b  focus:outline-none"/>
+          <input
+            type="email"
+            placeholder="abhi@gmail.com"
+            name="email"
+            className=" text-gray-700 mt-3 mb-3 h-7 border-gray-500 border-b  focus:outline-none"
+          />
 
           <label className=" text-lg mt-5"> Password</label>
-          <input type="password" placeholder="Password" name="password"  className=" text-gray-700 mt-3 mb-3 h-7 border-b border-gray-400 focus:outline-none"/>
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            className=" text-gray-700 mt-3 mb-3 h-7 border-b border-gray-400 focus:outline-none"
+          />
 
-          <button type="submit" className=" items-center w-28  border-none  rounded-lg text-white bg-teal-600 p-2 mt-5 cursor-pointer flex justify-center hover:bg-teal-500 self-center">
+          <button
+            type="submit"
+            className=" items-center w-28  border-none  rounded-lg text-white bg-teal-600 p-2 mt-5 cursor-pointer flex justify-center hover:bg-teal-500 self-center"
+          >
             Update
-            </button>
+          </button>
         </form>
       </div>
       <Sidebar />

@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      backgroundImage:{
+        'login-page': "url('https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg')"
+      },
       inset:{
         '18':'18%',
         '20':'20%',

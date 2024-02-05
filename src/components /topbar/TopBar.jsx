@@ -6,10 +6,12 @@ import {
   faSquarePinterest,
   faSquareInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import user from "../assets/WhatsApp Image 2023-11-10 at 2.35.21 PM.jpeg";
+import user_img from "../assets/WhatsApp Image 2023-11-10 at 2.35.21 PM.jpeg";
 import search from "../assets/search.png";
+import { Link } from "react-router-dom";
 
 function TopBar() {
+  const user = false; 
   const links = [
     {
       id: 1,
@@ -29,7 +31,7 @@ function TopBar() {
     },
     {
       id: 5,
-      link: "Logout",
+      link: user ? "Logout" : null,
     },
   ];
 
@@ -40,7 +42,7 @@ function TopBar() {
       <div className="flex-3 flex items-center justify-center ">
         <FontAwesomeIcon
           icon={faFacebookSquare}
-          className=" ml-2 mr-5 text-2xl text-gray-500 cursor-pointer hover:text-blue-500"
+          className=" ml-2 mr-5 text-2xl text-gray-500 cursor-pointer hover:text-blue-600"
         />
         <FontAwesomeIcon
           icon={faSquareXTwitter}
@@ -79,9 +81,12 @@ function TopBar() {
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:scale-110 duration-150 "
+              className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1 "
             >
+            <Link to={link} smooth duration={500}>
               {link}
+            </Link>
+
             </li>
           ))}
         </ul>
@@ -89,11 +94,21 @@ function TopBar() {
 
       {/* ---------------------left section --------------------------- */}
       <div className="flex-3 flex items-center justify-center ">
-        <img
-          src={user}
-          alt=""
-          className="w-10 h-10 rounded-full object-cover"
-        />
+        {
+          user?
+            <img
+              src={user_img}
+              alt=""
+              className="w-9
+               h-9 rounded-full object-cover"
+            />
+          :
+          <>
+          <Link to="/login" className=" mr-3 font-varela font-semibold text-gray-500  hover:bg-slate-200 hover:rounded-md p-1"> Login </Link>
+          <Link to="/register" className=" mr-1 font-varela font-semibold text-gray-500  hover:bg-slate-200 hover:rounded-md p-1"> Register </Link>
+          </>
+          
+        }
         <img
           src={search}
           alt=""
