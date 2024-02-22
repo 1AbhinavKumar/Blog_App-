@@ -16,7 +16,6 @@ function App() {
       <TopBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/Home" element={<HomePage />} />
         <Route path="/posts" element={<HomePage />} />
         <Route
           path="register" // Removed the leading slash

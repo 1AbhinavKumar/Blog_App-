@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import user from "../assets/WhatsApp Image 2023-11-10 at 2.35.21 PM.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,34 +7,20 @@ import {
   faSquarePinterest,
   faSquareInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-function sidebar() {
-  const categories = [
-    {
-      id: 1,
-      link: "Life",
-    },
-    {
-      id: 2,
-      link: "Music",
-    },
-    {
-      id: 3,
-      link: "Style",
-    },
-    {
-      id: 4,
-      link: "Sport",
-    },
-    {
-      id: 5,
-      link: "Tech",
-    },
-    {
-      id: 6,
-      link: "Cinema",
-    },
-  ];
+function Sidebar() {
+  const [cats, setCats] = useState([]); 
+
+  useEffect(() =>{
+    const getCats = async ()=>{
+      const res = await axios.get("/categories");
+      setCats(res.data);
+    }
+    getCats();
+  },[]);
+
 
   return (
     <div className=" flex-3 m-3 pb-8 bg-slate-100 pl-2 pr-2 pt-2 flex flex-col items-center ">
@@ -58,10 +44,12 @@ function sidebar() {
         </span>
 
         <ul className=" mb-2 mt-2 text-center">
-          {categories.map(({ id, link }) => (
-            <li key={id} className=" inline-block w-1/2 cursor-pointer mt-1">
-              {link}
+          {cats.map((category) => (
+            <Link key={category.id} to={`/?cat=${category.name}`}>
+            <li key={category.id} className=" inline-block w-1/2 cursor-pointer mt-1">
+              {category.name}
             </li>
+            </Link>
           ))}
         </ul>
       </div>
@@ -94,4 +82,4 @@ function sidebar() {
   );
 }
 
-export default sidebar;
+export default Sidebar;

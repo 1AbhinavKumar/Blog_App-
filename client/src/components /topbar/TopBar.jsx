@@ -15,7 +15,7 @@ function TopBar() {
   const links = [
     {
       id: 1,
-      link: "Home",
+      link: "",
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ function TopBar() {
   ];
 
   return (
-    <div className="w-full h-50 bg-white sticky top-0 flex items-center z-20">
+    <div className="w-full h-12 bg-white sticky top-0 flex items-center z-20">
       {/* --------------- right section -------------------- */}
 
       <div className="flex-3 flex items-center justify-center ">
@@ -83,10 +83,11 @@ function TopBar() {
               key={id}
               className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1 "
             >
-            <Link to={link} smooth duration={500}>
-              {link}
-            </Link>
-
+              {link === "" ? (
+                <Link to="/" smooth duration={500}>Home</Link>
+              ) : (
+                <Link to={link} smooth duration={500}>{link}</Link>
+              )}
             </li>
           ))}
         </ul>
