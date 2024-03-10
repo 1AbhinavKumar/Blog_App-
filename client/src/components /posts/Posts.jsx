@@ -6,7 +6,7 @@ function posts({posts}) {
   return (
     <div className=' flex-9 flex flex-wrap m-5 justify-center'>
       {posts.map((post)=>(
-        <Post post={post}/>
+        <Post key={post._id} post={post}/>
       ))}
     
     </div>

@@ -45,7 +45,7 @@ function Sidebar() {
 
         <ul className=" mb-2 mt-2 text-center">
           {cats.map((category) => (
-            <Link key={category.id} to={`/?cat=${category.name}`}>
+            <Link  to={`/?cat=${category.name}`}>
             <li key={category.id} className=" inline-block w-1/2 cursor-pointer mt-1">
               {category.name}
             </li>

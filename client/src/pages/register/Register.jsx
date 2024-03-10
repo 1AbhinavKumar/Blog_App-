@@ -60,7 +60,7 @@ export default function Register() {
         <button className="mt-5 cursor-pointer bg-teal-600 text-white p-3 border-none rounded-lg text-center hover:bg-teal-400">Register</button>
       </form>
 
-      <button className=" absolute top-14 right-5 bg-slate-600 cursor-pointer p-3 text-white rounded-lg mt-2 hover:bg-slate-400">
+      <button className="block  absolute top-14 right-5 bg-slate-600 cursor-pointer p-2 text-white rounded-lg mt-2 hover:bg-slate-400">
         <Link to='/login'> Login </Link>
       </button>
         </div>
