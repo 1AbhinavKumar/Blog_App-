@@ -10,16 +10,23 @@ const multer = require('multer')
 
 
 dotenv.config();
-
 app.use(express.json());
+const encodedPassword = encodeURIComponent('1Abhin@v');
+const mongo_url = `mongodb+srv://Abhi1105:${encodedPassword}@blogapp.yzux6lx.mongodb.net/`;
+
 
 mongoose
-  .connect(process.env.mongo_url, {
-  })
-  .then(() => {
-    console.log("connected");
-  })
-  .catch((err) => console.log(err));
+.connect(mongo_url, {
+})
+.then(() => {
+  // console.log(process.env.mongo_url)
+  console.log("connected");
+})
+.catch((err)=>{
+   console.log(err)
+  });
+
+
 
   const storage = multer.diskStorage({
     destination:(req,file,cb) =>{  // cb-> callback function

@@ -20,7 +20,6 @@ router.post("/register", async (req, res) => {
     res.status(200).json(user); 
   } catch (err) {
     res.status(500).json(err); // res -> responese the status error
-    console.log(err);
   }
 });
 
@@ -35,7 +34,7 @@ router.post("/login", async(req,res)=>{
     !validate  && res.status(400).json("Invalid Password")
     
     const {password,  ...others} = user._doc;  // this line is used to hide the password from the database . all the informations are in user._doc itself user contains lot of other informations that we don't need . 
-    
+
     res.status(200).json(others)
   } catch(err){
     res.status(500).json(err);
