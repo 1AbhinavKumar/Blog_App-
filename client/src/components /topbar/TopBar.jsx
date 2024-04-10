@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookSquare,
@@ -6,34 +6,47 @@ import {
   faSquarePinterest,
   faSquareInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import user_img from "../assets/WhatsApp Image 2023-11-10 at 2.35.21 PM.jpeg";
+
 import search from "../assets/search.png";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
+// import { useNavigate } from "react-router-dom"; // Import useNavigate
+
 
 function TopBar() {
-  const user = false; 
-  const links = [
-    {
-      id: 1,
-      link: "",
-    },
-    {
-      id: 2,
-      link: "About",
-    },
-    {
-      id: 3,
-      link: "Contact",
-    },
-    {
-      id: 4,
-      link: "Write",
-    },
-    {
-      id: 5,
-      link: user ? "Logout" : null,
-    },
-  ];
+  const {user,dispatch} = useContext(Context); 
+
+  // const navigate = useNavigate(); // Initialize the hook
+  const handleLogout =()=>{
+    dispatch({type: "LOGOUT"});
+    // navigate("/login");
+    // window.location.replace("/login")
+    
+  }
+
+  // const links = [
+  //   {
+  //     id: 1,
+  //     link: "",
+  //   },
+  //   {
+  //     id: 2,
+  //     link: "About",
+  //   },
+  //   {
+  //     id: 3,
+  //     link: "Contact",
+  //   },
+  //   {
+  //     id: 4,
+  //     link: "Write",
+  //   },
+  //   {
+  //     id: 5,
+  //     link: user ? "Logout" : null,
+  //     // onClick: user ? handleLogout : null // Update: conditional onClick
+  //   },
+  // ];
 
   return (
     <div className="w-full h-12 bg-white sticky top-0 flex items-center z-20">
@@ -61,35 +74,49 @@ function TopBar() {
       {/* --------------------- mid section   ---------------------- */}
       <div className="flex-6 ">
         <ul className="flex justify-center m-0 p-0 ">
-          {/* <li className="mr-5 text-18 font-bold cursor-pointer text-gray-500">
+          <Link to="/" duration={500}>
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
             Home
           </li>
-          <li className="mr-5 text-18 font-bold cursor-pointer text-gray-500">
+          </Link>
+
+          <Link to="/About" duration={500}>
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
             About
           </li>
-          <li className="mr-5 text-18 font-bold cursor-pointer text-gray-500">
+          </Link>
+            
+          <Link to="/contact" duration={500}>
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
             Contact
           </li>
-          <li className="mr-5 text-18 font-bold cursor-pointer text-gray-500">
+          </Link>
+
+          <Link to="/write" duration={500}>
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
             Write
           </li>
-          <li className="mr-5 text-18 font-bold cursor-pointer text-gray-500">
-            Logout
-          </li> */}
-          {/* instead this we can map  */}
+          </Link>
 
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1" onClick={handleLogout}>
+            {user && "Logout"}
+
+          </li>
+
+          {/* instead this we can map  */}
+{/* 
           {links.map(({ id, link }) => (
             <li
               key={id}
               className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1 "
             >
               {link === "" ? (
-                <Link to="/" smooth duration={500}>Home</Link>
+                <Link to="/" duration={500}>Home</Link>
               ) : (
-                <Link to={link} smooth duration={500}>{link}</Link>
+                <Link to={link} duration={500}>{link}</Link>
               )}
             </li>
-          ))}
+          ))} */}
         </ul>
       </div>
 
@@ -98,7 +125,7 @@ function TopBar() {
         {
           user?
             <img
-              src={user_img}
+              src={user.profilePic}
               alt=""
               className="w-9
                h-9 rounded-full object-cover"

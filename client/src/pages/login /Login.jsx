@@ -6,7 +6,7 @@ import axios from "axios";
 function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
-  const { dispatch, user, isFetching } = useContext(Context);
+  const { dispatch, isFetching } = useContext(Context);
 
   const handleSubmit = async (e) => {
     // here we are using async function as we are making call to API
@@ -24,7 +24,7 @@ function Login() {
       dispatch({ type: "LOGIN_FAILURE" });
     }
   };
-console.log(user, isFetching)
+
 
   return (
     <div className=" h-screen flex flex-col  justify-center bg-cover items-center bg-login-page ">
@@ -56,7 +56,8 @@ console.log(user, isFetching)
 
           <button
             type="submit"
-            className=" mt-5 cursor-pointer bg-teal-600 text-white p-3 border-none rounded-lg text-center hover:bg-teal-500"
+            className=" mt-5 cursor-pointer bg-teal-600 text-white p-3 border-none rounded-lg text-center hover:bg-teal-500 disabled:cursor-not-allowed disabled:bg-teal-100"
+            disabled ={isFetching}
           >
             Login
           </button>

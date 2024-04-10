@@ -11,7 +11,6 @@ import { Context } from "./context/Context";
 
 function App() {
   const { user } = useContext(Context);
-  console.log(user);
   return (
     <div>
       <TopBar />
@@ -22,6 +21,7 @@ function App() {
           path="/register" // Removed the leading slash
           element={user ? <HomePage /> : <Register />}
         />
+        {/* <Route path="/about" element={user ? <About /> : <Login />} /> */}
         <Route path="/post/:id" element={<Single />} />
         <Route path="/login" element={user ? <HomePage /> : <Login />} />
         <Route path="/write" element={user ? <Write /> : <Login />} />
