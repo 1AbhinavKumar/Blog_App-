@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef ,useState} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import axios from "axios";
@@ -7,6 +7,7 @@ function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
   const { dispatch, isFetching } = useContext(Context);
+  const [error, setError ] = useState("")
 
   const handleSubmit = async (e) => {
     // here we are using async function as we are making call to API
@@ -22,6 +23,9 @@ function Login() {
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE" });
+      // console.log(err.request.response)
+      setError(err.request.response)
+      // console.log(error)
     }
   };
 
@@ -66,6 +70,8 @@ function Login() {
           <Link to="/register"> Register </Link>
         </button>
       </div>
+      {error && <span className=" text-red-600 font-black pt-2">{error}</span>}  
+      {/*  here setting the error message on the basis of invalid username and password  */}
     </div>
   );
 }
