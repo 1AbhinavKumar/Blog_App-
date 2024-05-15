@@ -2,11 +2,13 @@ import React from "react";
 import {Link} from "react-router-dom"
 
 function post({ post }) {
+  const PF = "http://localhost:5000/images/"
+
   return (
     <div className=" w-96 mt-4 mr-6 mb-10 ml-6">
       {post.photo && (
         <img
-          src={post.photo}
+          src={PF + post.photo}
           alt=""
           className=" w-full object-cover rounded-md h-60"
         />

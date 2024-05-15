@@ -9,7 +9,7 @@ function Singlepost() {
   const path = location.pathname.split("/")[2];   // to get the id of the post we have used location  use print(location .pathname )
   
   const [post, setPost]= useState({});
-
+  const PF = "http://localhost:5000/images/"
   useEffect(()=>{
     const getPost = async () =>{
       const res = await axios.get("/posts/"+path);
@@ -22,7 +22,7 @@ function Singlepost() {
     <div className=" flex-9">
       <div className=" p-5 pr-0">
         {post.photo && (
-          <img src={post.photo} alt="" className=" w-full h-80 rounded-lg object-cover"/>
+          <img src={PF+post.photo} alt="" className=" w-full h-80 rounded-lg object-cover"/>
         )}
         <h1 className=" text-center m-3 text-2xl font-lora">
           {post.title}
