@@ -11,11 +11,12 @@ import search from "../assets/search.png";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 // import { useNavigate } from "react-router-dom"; // Import useNavigate
+import usr_img from "../assets/usr_img.jpeg"
 
 
 function TopBar() {
   const {user,dispatch} = useContext(Context); 
-
+  const PF = "http://localhost:5000/images/"
   // const navigate = useNavigate(); // Initialize the hook
   const handleLogout =()=>{
     dispatch({type: "LOGOUT"});
@@ -23,7 +24,7 @@ function TopBar() {
     // window.location.replace("/login")
     
   }
-
+  
   // const links = [
   //   {
   //     id: 1,
@@ -47,7 +48,8 @@ function TopBar() {
   //     // onClick: user ? handleLogout : null // Update: conditional onClick
   //   },
   // ];
-
+  
+  
   return (
     <div className="w-full h-12 bg-white sticky top-0 flex items-center z-20">
       {/* --------------- right section -------------------- */}
@@ -124,12 +126,14 @@ function TopBar() {
       <div className="flex-3 flex items-center justify-center ">
         {
           user?
+          <Link to="/settings">
             <img
-              src={user.profilePic}
+              src={user.profilePic.length>0 ? PF+user.profilePic :usr_img } 
               alt=""
               className="w-9
-               h-9 rounded-full object-cover"
-            />
+              h-9 rounded-full object-cover cursor-pointer"
+              />
+            </Link>
           :
           <>
           <Link to="/login" className=" mr-3 font-varela font-semibold text-gray-500  hover:bg-slate-200 hover:rounded-md p-1"> Login </Link>
