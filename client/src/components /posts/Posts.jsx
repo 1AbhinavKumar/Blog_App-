@@ -4,7 +4,7 @@ import Post from '../post/post'
 
 function posts({posts}) {
   return (
-    <div className=' flex-9 flex flex-wrap m-5 justify-center'>
+    <div className=' flex flex-9 flex-wrap m-4 justify-center'>
       {posts.map((post)=>(
         <Post key={post._id} post={post}/>
       ))}

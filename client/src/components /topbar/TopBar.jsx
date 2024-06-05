@@ -74,7 +74,7 @@ function TopBar() {
       </div>
 
       {/* --------------------- mid section   ---------------------- */}
-      <div className="flex-6 ">
+      <div className="flex-6 max-[650px]:hidden">
         <ul className="flex justify-center m-0 p-0 ">
           <Link to="/" duration={500}>
           <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
@@ -82,7 +82,7 @@ function TopBar() {
           </li>
           </Link>
 
-          <Link to="/About" duration={500}>
+          {/* <Link to="/About" duration={500}>
           <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
             About
           </li>
@@ -92,7 +92,7 @@ function TopBar() {
           <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
             Contact
           </li>
-          </Link>
+          </Link> */}
 
           <Link to="/write" duration={500}>
           <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
@@ -141,11 +141,11 @@ function TopBar() {
           </>
           
         }
-        <img
+        {/* <img
           src={search}
           alt=""
           className="w-5 text-18 cursor-pointer text-gray-500 mr-5 ml-3 "
-        />
+        /> */}
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ function Sidebar() {
 
 
   return (
-    <div className=" flex-3 m-3 pb-8 bg-slate-100 pl-2 pr-2 pt-2 flex flex-col items-center ">
+    <div className=" flex-3 m-3 pb-8 bg-slate-100 pl-2 pr-2 pt-2 flex flex-col items-center max-[650px]:hidden">
       {/* ------------ top part ------------------------ */}
       <div className=" flex flex-col  items-center ">
         <span className=" m-2 border-t-2 border-teal-500 border-b-2  font-varela font-semibold">
@@ -33,8 +33,7 @@ function Sidebar() {
         <img src={user} alt="" className=" mt-1" />
 
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, et.
-          Consectetur dolorem vitae quas adipisci in repellendus quis.
+          Hey, I am Abhinav Kumar. Welcome to the blog website Here you can find several tech trends related articles . Please do share your valualbe thoughts, knowledge and experience here .
         </p>
       </div>
       {/* --------------- mid part categories ------------- */}

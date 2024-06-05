@@ -5,7 +5,7 @@ function post({ post }) {
   const PF = "http://localhost:5000/images/"
 
   return (
-    <div className=" w-96 mt-4 mr-6 mb-10 ml-6">
+    <div className="lg:w-96 mt-4 mb-10 mx-6 ">
       {post.photo && (
         <img
           src={PF + post.photo}
