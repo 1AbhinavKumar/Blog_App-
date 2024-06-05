@@ -7,7 +7,6 @@ import {
   faSquareInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-import search from "../assets/search.png";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 // import { useNavigate } from "react-router-dom"; // Import useNavigate
@@ -51,56 +50,64 @@ function TopBar() {
   
   
   return (
-    <div className="w-full h-12 bg-white sticky top-0 flex items-center z-20">
+    <div className="w-full h-12 bg-blue-100 sticky top-0 flex items-center z-20 ">
       {/* --------------- right section -------------------- */}
 
-      <div className="flex-3 flex items-center justify-center ">
+      <div className="flex-3 flex items-center justify-center max-[650px]:hidden ">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon
           icon={faFacebookSquare}
           className=" ml-2 mr-5 text-2xl text-gray-500 cursor-pointer hover:text-blue-600"
         />
+        </a>
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon
           icon={faSquareXTwitter}
           className="mr-5 text-2xl text-gray-500 cursor-pointer hover:text-black"
         />
+        </a>
+        <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon
           icon={faSquarePinterest}
           className=" mr-5 text-2xl text-gray-500 cursor-pointer hover:text-red-400"
         />
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
         <FontAwesomeIcon
           icon={faSquareInstagram}
           className=" mr-8 text-2xl text-gray-500 cursor-pointer hover:text-red-600 "
         />
+        </a>
       </div>
 
       {/* --------------------- mid section   ---------------------- */}
-      <div className="flex-6 max-[650px]:hidden">
+      <div className="flex-6 ">
         <ul className="flex justify-center m-0 p-0 ">
           <Link to="/" duration={500}>
-          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500 hover:text-black  p-1">
             Home
           </li>
           </Link>
 
           {/* <Link to="/About" duration={500}>
-          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500 hover:text-black  p-1">
             About
           </li>
           </Link>
             
           <Link to="/contact" duration={500}>
-          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500 hover:text-black  p-1">
             Contact
           </li>
           </Link> */}
 
           <Link to="/write" duration={500}>
-          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1">
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500 hover:text-black  p-1">
             Write
           </li>
           </Link>
 
-          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1" onClick={handleLogout}>
+          <li className="mr-5 text-20 font-bold cursor-pointer text-gray-500 hover:text-black  p-1" onClick={handleLogout}>
             {user && "Logout"}
 
           </li>
@@ -110,7 +117,7 @@ function TopBar() {
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className="mr-5 text-20 font-bold cursor-pointer text-gray-500  hover:bg-slate-200 hover:rounded-md p-1 "
+              className="mr-5 text-20 font-bold cursor-pointer text-gray-500 hover:text-black  p-1 "
             >
               {link === "" ? (
                 <Link to="/" duration={500}>Home</Link>
@@ -136,8 +143,8 @@ function TopBar() {
             </Link>
           :
           <>
-          <Link to="/login" className=" mr-3 font-varela font-semibold text-gray-500  hover:bg-slate-200 hover:rounded-md p-1"> Login </Link>
-          <Link to="/register" className=" mr-1 font-varela font-semibold text-gray-500  hover:bg-slate-200 hover:rounded-md p-1"> Register </Link>
+          <Link to="/login" className=" mr-3 font-varela font-semibold text-gray-500 hover:text-black  p-1"> Login </Link>
+          <Link to="/register" className=" mr-1 font-varela font-semibold text-gray-500 hover:text-black  p-1"> Register </Link>
           </>
           
         }

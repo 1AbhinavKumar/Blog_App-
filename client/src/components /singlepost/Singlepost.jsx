@@ -56,7 +56,7 @@ function Singlepost() {
 
   return (
     <div className=" flex-9">
-      <div className=" p-5 pr-0">
+      <div className=" p-5 ">
         {post.photo && (
           <img
             src={PF + post.photo}
@@ -101,7 +101,7 @@ function Singlepost() {
               <b className=" ml-1">{post.username}</b>
             </Link>
           </span>
-          <span className=" text-yellow-700">
+          <span className=" text-yellow-700 mr-2">
             {new Date(post.createdAt).toDateString()}
           </span>
         </div>
@@ -115,11 +115,11 @@ function Singlepost() {
           onChange={(e)=> setDesc(e.target.value)}
           />
         ):
-         (<p className=" text-gray-800 text-lg leading-6 whitespace-pre-wrap">{post.desc}</p>)}
+         (<p className=" text-gray-800 text-lg leading-6 whitespace-pre-wrap text-justify p-2">{post.desc}</p>)}
 
         {updateMode && (
         <div className="flex justify-end">
-        <button onClick={handleUpdate} className="bg-teal-600 rounded-lg p-1 text-white cursor-pointer mt-2 border-none w-20">Update
+        <button onClick={handleUpdate} className="bg-teal-600 rounded-lg p-1 text-white cursor-pointer mt-2 border-none w-20 ">Update
         </button>
         </div>)}
 

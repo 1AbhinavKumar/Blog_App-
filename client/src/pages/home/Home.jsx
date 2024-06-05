@@ -3,7 +3,7 @@ import Header from '../../components /header /Header'
 import Posts from '../../components /posts/Posts'
 import Sidebar from '../../components /sidebar/sidebar'
 import axios from 'axios'
-import { useLoaderData, useLocation } from 'react-router-dom'
+import {  useLocation } from 'react-router-dom'
 
 function Home() {
   const [posts, setPosts] = useState([]);

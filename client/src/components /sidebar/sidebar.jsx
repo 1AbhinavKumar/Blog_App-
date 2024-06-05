@@ -30,9 +30,9 @@ function Sidebar() {
           About Me
         </span>
 
-        <img src={user} alt="" className=" mt-1" />
+        {/* <img src={user} alt="" className=" mt-1 rounded-2xl" /> */}
 
-        <p>
+        <p className=" mt-2">
           Hey, I am Abhinav Kumar. Welcome to the blog website Here you can find several tech trends related articles . Please do share your valualbe thoughts, knowledge and experience here .
         </p>
       </div>
@@ -42,15 +42,30 @@ function Sidebar() {
           Categories
         </span>
 
-        <ul className=" mb-2 mt-2 text-center">
+        <ul className=" mb-2 mt-2 ">
           {cats.map((category) => (
             <Link  to={`/?cat=${category.name}`}>
-            <li key={category.id} className=" inline-block w-1/2 cursor-pointer mt-1">
+            <li key={category.id} className=" inline-block cursor-pointer mt-1">
               {category.name}
             </li>
             </Link>
           ))}
         </ul>
+      </div>
+      <div className=" flex flex-col items-center">
+        <span className=" m-2 border-t-2 border-teal-500 border-b-2  font-varela font-bold">
+          Featured Articles
+        </span>
+
+        {/* <ul className=" mb-2 mt-2 text-center">
+          {cats.map((category) => (
+            <Link  to={`/?cat=${category.name}`}>
+            <li key={category.id} className=" inline-block  cursor-pointer mt-1">
+              {category.name}
+            </li>
+            </Link>
+          ))}
+        </ul> */}
       </div>
 
       {/* ------------- bottom section ------------- */}
