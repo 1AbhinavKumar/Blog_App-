@@ -9,18 +9,18 @@ const categoriesRoute = require('./routes/categories')
 const multer = require('multer')
 const path = require('path')
 
-dotenv.config();
 app.use(express.json());
+dotenv.config();
 
 app.use("/images",express.static(path.join(__dirname, "/images")))
 
-const encodedPassword = encodeURIComponent('1Abhin@v');
-const mongo_url = `mongodb+srv://Abhi1105:${encodedPassword}@blogapp.yzux6lx.mongodb.net/test`;
+// const encodedPassword = encodeURIComponent('1Abhin@v');
+// const mongo_url = `mongodb+srv://Abhi1105:${encodedPassword}@blogapp.yzux6lx.mongodb.net/test`;
 
 
 mongoose
-.connect(mongo_url, {
-})
+.connect(process.env.MONGODB_URI, {
+  })
 .then(() => {
   // console.log(process.env.mongo_url)
   console.log("connected");
@@ -50,6 +50,7 @@ app.use ("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoriesRoute); 
 
-app.listen("5000", () => {
-  console.log("backend is running ");
+const PORT = process.env.PORT
+app.listen(PORT, () => {
+  console.log("backend is running on" + PORT);
 });
