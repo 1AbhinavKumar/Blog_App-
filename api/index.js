@@ -15,7 +15,7 @@ app.use(express.json());
 app.use("/images",express.static(path.join(__dirname, "/images")))
 
 const encodedPassword = encodeURIComponent('1Abhin@v');
-const mongo_url = `mongodb+srv://Abhi1105:${encodedPassword}@blogapp.yzux6lx.mongodb.net/`;
+const mongo_url = `mongodb+srv://Abhi1105:${encodedPassword}@blogapp.yzux6lx.mongodb.net/test`;
 
 
 mongoose

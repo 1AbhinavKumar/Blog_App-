@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import user from "../assets/WhatsApp Image 2023-11-10 at 2.35.21 PM.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookSquare,
