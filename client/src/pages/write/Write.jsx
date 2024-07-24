@@ -66,15 +66,15 @@ function Write() {
         </div>
         <div>
           <textarea
-            placeholder="Tell your story.... "
+            placeholder="About the Article... "
             type="text"
             rows={6}
             autoFocus={true}
-            className=" text-2xl border-none p-5 w-3/4 placeholder:text-gray-500 font-normal  focus:outline-none"
+            className=" text-md border-none p-5 w-3/4 placeholder:text-gray-500 font-normal  focus:outline-none"
             onChange={e=> setDesc(e.target.value) }
           />
         </div>
-        <button type=" submit" className=" absolute top-5 right-11 border-none rounded-md text-white text-xl cursor-pointer flex items-center bg-teal-500 p-1 hover:bg-teal-400">Publish</button>
+        <button type=" submit" className=" absolute top-5 right-11 border-none rounded-sm text-white text-sm cursor-pointer flex items-center bg-blue-600 px-3 py-2 hover:bg-blue-700">Publish</button>
       </form>
     </div>
   );

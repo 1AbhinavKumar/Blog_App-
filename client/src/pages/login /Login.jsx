@@ -32,10 +32,10 @@ function Login() {
 
   return (
     <div className=" h-screen flex flex-col  justify-center bg-cover items-center bg-login-page ">
-      <div className=" bg-slate-400 p-5 flex flex-col items-center rounded-3xl bg-opacity-35">
+      <div className=" bg-slate-400 p-6 flex flex-col items-center rounded-xl bg-opacity-35">
         <span className=" text-5xl font-lora text-black font-black">Login</span>
 
-        <form className=" mt-5 flex flex-col" onSubmit={handleSubmit}>
+        <form className=" mt-2 flex flex-col" onSubmit={handleSubmit}>
           <label className=" mt-3 mb-3 font-black font-lora text-xl">
             Username
           </label>
@@ -43,7 +43,7 @@ function Login() {
             type="text"
             name="username"
             placeholder="Enter your username..."
-            className=" p-3 bg-white border-none rounded-lg focus:outline-none "
+            className=" p-2 bg-white border-none rounded-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
             ref={userRef}
           />
 
@@ -54,19 +54,21 @@ function Login() {
             type="password"
             name="password"
             placeholder="Enter your password...."
-            className=" p-3 bg-white border-none rounded-lg focus:outline-none"
+            className=" p-2 bg-white border-none rounded-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black "
             ref={passwordRef}
           />
 
           <button
             type="submit"
-            className=" mt-5 cursor-pointer bg-teal-600 text-white p-3 border-none rounded-lg text-center hover:bg-teal-500 disabled:cursor-not-allowed disabled:bg-teal-100"
+            className=" mt-5 cursor-pointer bg-blue-600 text-white py-2 border-none rounded-lg text-center hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-teal-100 text-sm"
             disabled ={isFetching}
           >
             Login
           </button>
         </form>
-        <button className=" absolute top-14 right-5 bg-teal-600 cursor-pointer p-2 border-none text-white rounded-lg mt-2 hover:bg-teal-500">
+
+
+        <button className=" absolute top-14 right-5 bg-blue-600 cursor-pointer p-3 border-none text-white rounded-md mt-2 hover:bg-blue-700 text-sm">
           <Link to="/register"> Register </Link>
         </button>
       </div>

@@ -119,7 +119,7 @@ function Singlepost() {
 
         {updateMode && (
         <div className="flex justify-end">
-        <button onClick={handleUpdate} className="bg-teal-600 rounded-lg p-1 text-white cursor-pointer mt-2 border-none w-20 ">Update
+        <button onClick={handleUpdate} className="bg-blue-600 rounded-sm p-1 text-white cursor-pointer mt-2 border-none w-20 ">Update
         </button>
         </div>)}
 
