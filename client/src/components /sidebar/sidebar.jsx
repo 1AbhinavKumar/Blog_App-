@@ -25,36 +25,36 @@ function Sidebar() {
     <div className=" flex-3 m-3 pb-8 bg-slate-100 pl-2 pr-2 pt-2 flex flex-col items-center max-[650px]:hidden">
       {/* ------------ top part ------------------------ */}
       <div className=" flex flex-col  items-center ">
-        <span className=" m-2 border-t-2 border-teal-500 border-b-2  font-varela font-semibold">
+        <span className=" m-2  border-teal-500 border-b-2  font-varela font-semibold">
           About Me
         </span>
 
         {/* <img src={user} alt="" className=" mt-1 rounded-2xl" /> */}
 
         <p className=" mt-2">
-          Hey, I am Abhinav Kumar. Welcome to the blog website Here you can find several tech trends related articles . Please do share your valualbe thoughts, knowledge and experience here .
+          Hey, I am Abhinav Kumar. Welcome to the blog website Here you can find several tech trends related articles . Please do share your valuable thoughts, knowledge and experience here .
         </p>
       </div>
       {/* --------------- mid part categories ------------- */}
       <div className=" flex flex-col items-center">
-        <span className=" m-2 border-t-2 border-teal-500 border-b-2  font-varela font-bold">
+        <span className=" mt-6 border-teal-500 border-b-2  font-varela font-bold">
           Categories
         </span>
 
         <ul className=" mb-2 mt-2 ">
           {cats.map((category) => (
             <Link  to={`/?cat=${category.name}`}>
-            <li key={category.id} className=" inline-block cursor-pointer mt-1">
+            <li key={category._id} className="inline-flex items-center justify-center py-1 border-2 border-gray-300 rounded-3xl cursor-pointer sm:min-w-24 min-w-16 text-sm px-4 m-2">
               {category.name}
             </li>
             </Link>
           ))}
         </ul>
       </div>
-      <div className=" flex flex-col items-center">
+      {/* <div className=" flex flex-col items-center">
         <span className=" m-2 border-t-2 border-teal-500 border-b-2  font-varela font-bold">
           Featured Articles
-        </span>
+        </span> */}
 
         {/* <ul className=" mb-2 mt-2 text-center">
           {cats.map((category) => (
@@ -65,11 +65,11 @@ function Sidebar() {
             </Link>
           ))}
         </ul> */}
-      </div>
+      {/* </div> */}
 
       {/* ------------- bottom section ------------- */}
       <div className=" flex flex-col items-center justify-center">
-        <span className=" m-2 border-t-2 border-teal-500 border-b-2  font-varela font-semibold ">
+        <span className=" mt-6 mb-4 border-teal-500 border-b-2  font-varela font-semibold ">
           FOLLOW US
         </span>
         <div>

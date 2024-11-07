@@ -73,7 +73,9 @@ router.get("/:id", async (req, res) => {
 // Get all post 
 router.get("/", async (req, res) => {
     const username = req.query.user;  // query will look at questionmark(?) in url.
-    const categoryname = req.query.category;
+    const categoryname = req.query.cat;
+    
+    // console.log(req.query)
     try {
         let posts; 
         if (username){
